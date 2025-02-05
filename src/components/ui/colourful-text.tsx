@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 export default function ColourfulText({ text }: { text: string }) {
-  const colors = ["rgba(46, 196, 182, 1)"];
+  const colors = ["rgba(254, 119, 2, 1)"];
 
   const [currentColors, setCurrentColors] = React.useState(colors);
   const [count, setCount] = React.useState(0);
