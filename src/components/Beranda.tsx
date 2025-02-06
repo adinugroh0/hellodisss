@@ -1,16 +1,12 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import ColourfulText from "@/components/ui/colourful-text";
 import Image from "next/image";
 import Link from "next/link";
 import Pengalaman from "./Pengalaman";
+import Myprojext from "./Myprojext";
 
 export function ColourfulTextDemo() {
-  // Referensi untuk bagian Pengalaman
-  const refPengalaman = useRef(null);
-  const isPengalamanInView = useInView(refPengalaman);
-
   return (
     <div className="bg-[#0C2D47]">
       <div>
@@ -70,19 +66,11 @@ export function ColourfulTextDemo() {
           </motion.div>
         </motion.div>
 
-        {/* Bagian Pengalaman: Muncul Saat Terlihat, Menghilang Saat Keluar */}
-        <div className="bg-[#0C2D47]">
-          {/* Bagian Pengalaman: Muncul Saat Terlihat, Menghilang Saat Keluar */}
-          <motion.div
-            ref={refPengalaman}
-            initial={{ opacity: 0, y: 50 }}
-            animate={
-              isPengalamanInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-            }
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            id="pengalaman">
-            <Pengalaman />
-          </motion.div>
+        <div id="pengalaman" className="bg-[#0C2D47]">
+          <Pengalaman />
+        </div>
+        <div id="myproject" className="bg-[#0C2D47]">
+          <Myprojext />
         </div>
       </div>
     </div>
